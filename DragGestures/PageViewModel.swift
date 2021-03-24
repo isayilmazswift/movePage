@@ -7,14 +7,23 @@
 
 import SwiftUI
 
-struct PageViewModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+class PageViewModel: ObservableObject {
+    
+    @Published var selectedTab = "tabs"
+    
+    @Published var urls = [
+        Page(url: URL(string: "https://www.apple.com")!),
+        Page(url: URL(string: "https://www.google.com")!),
+        Page(url: URL(string: "https://www.twitter.com")!),
+        Page(url: URL(string: "https://www.gmail.com")!),
+        Page(url: URL(string: "https://www.facebook.com")!),
+        Page(url: URL(string: "https://www.instagram.com")!),
+        Page(url: URL(string: "https://www.apple.com")!),
+        Page(url: URL(string: "https://www.google.com")!),
+        Page(url: URL(string: "https://www.twitter.com")!),
+        Page(url: URL(string: "https://www.gmail.com")!),
 
-struct PageViewModel_Previews: PreviewProvider {
-    static var previews: some View {
-        PageViewModel()
-    }
+    ]
+    
+    @Published var currentPage : Page?
 }
